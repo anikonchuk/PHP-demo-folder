@@ -1,11 +1,22 @@
 <?php
 
+$minimum = 5;
+
 if(isset($_POST['submit'])){
+  $name = array("Edwin", "Student", "Peter");
   $username = $_POST['username'];
   $password = $_POST['password'];
-  echo "Hello " . $username;
-  echo "<br />";
-  echo "Your password is " . $password;
+
+  if(strlen($username) < $minimum) {
+    echo "Username has to be longer than five";
+  }
+
+  if(!in_array($username, $name)) {
+    echo "Sorry, you cannot login";
+  } else {
+    echo "Welcome";
+  }
+
 }
 
  ?>
@@ -13,7 +24,7 @@ if(isset($_POST['submit'])){
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Document</title>
+    <title>Form</title>
   </head>
   <body>
     <form class="" action="form.php" method="post">
