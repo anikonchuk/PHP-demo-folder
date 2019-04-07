@@ -1,8 +1,9 @@
 <?php
 
-$minimum = 5;
+
 
 if(isset($_POST['submit'])){
+  $minimum = 3;
   $name = array("Edwin", "Student", "Peter");
   $username = $_POST['username'];
   $password = $_POST['password'];
