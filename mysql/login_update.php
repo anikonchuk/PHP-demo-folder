@@ -8,9 +8,6 @@
     die('Query failed' . mysqli_error());
   }
 
-
-
-
  ?>
 
 <!DOCTYPE html>
@@ -24,19 +21,22 @@
 
     <div class="container">
       <div class="col-sm-6">
-
-        <?php
-          while($row = mysqli_fetch_assoc($result)){
-            ?>
-            <pre>
-              <?php
-              print_r($row);
-              ?>
-            </pre>
-            <?php
-          }
-
-         ?>
+        <form class="" action="login_create.php" method="post">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" name="username">
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" name="password">
+          </div>
+          <div class="form-group">
+            <select class="" name="">
+              <option value="">1</option>
+            </select>
+          </div>
+            <input class="btn btn-primary" type="submit" name="submit" value="Update">
+        </form>
 
       </div>
     </div>
