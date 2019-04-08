@@ -3,7 +3,21 @@
   if(isset($_POST['submit'])){
     $username = $_POST['username'];
     $password = $_POST['password'];
-    
+
+    // if($username && $password) {
+    //   echo $username . $password;
+    // } else {
+    //   echo "These fields cannot be blank.";
+    // }
+
+    $connection = mysqli_connect('localhost', 'root', '', 'loginapp');
+
+    if($connection) {
+      echo "We are connected";
+    } else {
+      die("Database connection failed.");
+    }
+
   }
 
 
