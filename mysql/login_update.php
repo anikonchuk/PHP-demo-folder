@@ -1,14 +1,5 @@
-<?php include "db.php";
-
-  $query = "SELECT * FROM users";
-
-  $result = mysqli_query($connection, $query);
-
-  if(!$result) {
-    die('Query failed' . mysqli_error());
-  }
-
- ?>
+<?php include "db.php"; ?>
+<?php include "functions.php"; ?>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -31,8 +22,12 @@
             <input type="password" class="form-control" id="password" name="password">
           </div>
           <div class="form-group">
-            <select class="" name="">
-              <option value="">1</option>
+            <select class="" name="id">
+              <!-- <option value="">1</option> -->
+              <?php
+                showAllData();
+               ?>
+
             </select>
           </div>
             <input class="btn btn-primary" type="submit" name="submit" value="Update">
