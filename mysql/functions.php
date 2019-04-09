@@ -35,3 +35,17 @@ function updateTable(){
     die("QUERY FAILED " . mysqli_error($connection));
   }
 }
+
+function deleteRows(){
+  global $connection;
+  $id = $_POST['id'];
+
+  $query = "DELETE FROM users ";
+  $query .= "WHERE id = $id";
+
+  $result = mysqli_query($connection, $query);
+
+  if(!$result) {
+    die("QUERY FAILED " . mysqli_error($connection));
+  }
+}
