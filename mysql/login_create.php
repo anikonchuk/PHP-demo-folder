@@ -1,25 +1,9 @@
-<?php include "db.php";
+<?php include "db.php"; ?>
+<?php include "functions.php"; ?>
 
-  if(isset($_POST['submit'])){
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+<?php
 
-    // if($username && $password) {
-    //   echo $username . $password;
-    // } else {
-    //   echo "These fields cannot be blank.";
-    // }
-
-    $query = "INSERT INTO users(username, password) ";
-    $query .= "VALUES ('$username', '$password')";
-
-    $result = mysqli_query($connection, $query);
-
-    if(!$result) {
-      die('Query failed' . mysqli_error());
-    }
-
-  }
+createRows();
 
 
  ?>
@@ -35,6 +19,7 @@
 
     <div class="container">
       <div class="col-sm-6">
+        <h1 class="text-center">Create</h1>
           <form class="" action="login_create.php" method="post">
             <div class="form-group">
               <label for="username">Username</label>
@@ -44,7 +29,7 @@
               <label for="password">Password</label>
               <input type="password" class="form-control" id="password" name="password">
             </div>
-              <input class="btn btn-primary" type="submit" name="submit" value="Submit">
+              <input class="btn btn-primary" type="submit" name="submit" value="Create">
           </form>
 
       </div>

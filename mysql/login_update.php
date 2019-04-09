@@ -2,9 +2,8 @@
 <?php include "functions.php"; ?>
 
 <?php
-  if(isset($_POST['submit'])){
-    updateTable();
-  }
+
+  updateTable();
 
 
  ?>
@@ -21,6 +20,7 @@
 
     <div class="container">
       <div class="col-sm-6">
+        <h1>Update</h1>
         <form class="" action="login_update.php" method="post">
           <div class="form-group">
             <label for="username">Username</label>
