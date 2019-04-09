@@ -11,6 +11,11 @@ function createRows(){
     $username = mysqli_real_escape_string($connection, $username);
     $password = mysqli_real_escape_string($connection, $password);
 
+    $hashFormat = "$2y$10$";
+    $salt = "iusesomecrazystrings22";
+    $hash_and_salt = $hashFormat . $salt;
+    $password = crypt($password, $hash_and_salt);
+
     $query = "INSERT INTO users(username, password) ";
     $query .= "VALUES ('$username', '$password')";
 
@@ -66,6 +71,10 @@ function updateTable(){
     $username = mysqli_real_escape_string($connection, $username);
     $password = mysqli_real_escape_string($connection, $password);
 
+    $hashFormat = "$2y$10$";
+    $salt = "iusesomecrazystrings22";
+    $hash_and_salt = $hashFormat . $salt;
+    $password = crypt($password, $hash_and_salt);
 
     $query = "UPDATE users SET ";
     $query .= "username  = '$username', ";
